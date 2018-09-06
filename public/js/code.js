@@ -5,7 +5,6 @@ const UISelectors = {
 };
 UISelectors.menuBtn.addEventListener('click', (e) => {
   if (e.target.classList.contains('menu__trigger')) {
-      console.log('menu triggered');
       UISelectors.menuBtn.classList.toggle('button-active');
       UISelectors.menu.classList.toggle('active');
   };
