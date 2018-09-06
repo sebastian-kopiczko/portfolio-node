@@ -11,3 +11,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
 });
+app.get('/about', (req, res) => res.render('about'));
+app.get('/projects', (req, res) => res.render('projects'));
+app.get('/contact', (req, res) => res.render('contact'));
+app.get('*', (req, res) => res.render('404'));
