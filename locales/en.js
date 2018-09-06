@@ -4,6 +4,7 @@
 	"nav-contact": "contact",
 	"page-about": "lorem lorem",
 	"test": "english",
-	"bialaperla.title": "bialaperla.title",
-	"profil.title": "profil.title"
+	"about-content": "about-content",
+	"about-heading": "about-heading",
+	"about-breadcrumb": "about-breadcrumb"
 }

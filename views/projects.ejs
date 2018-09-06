@@ -1,3 +1,5 @@
+<%- include('includes/header') %>
+<%- include('includes/navbar') %>
 <section class="portfolio">
   <div class="container">
     <div class="inner portfolio__inner">
@@ -13,7 +15,7 @@
         </p>
       </div>
       <div class="inner__content">
-        <% projects.forEach(function(project){ %>
+        <% projectsItems.forEach(function(project){ %>
           <div class="card">
             <!-- <div class="card__image">
                   <img src="assets/images/portfolio/<?php echo $project_value['name']; ?>/default.png">
@@ -29,8 +31,9 @@
                 <%= project.tags %>
               </div>
               <a href="#" class="button button-gradient button-gradient--black"><span>github</span></a>
-              <% if (projects.live) %>
+              <% if (project.live){ %>
               <a href="#" class="button button-gradient button-gradient--blue"><span>live</span></a>
+              <% } %>
             </div>
           </div>
           <% }) %>
@@ -38,3 +41,4 @@
     </div>
   </div>
 </section>
+<%- include('includes/footer') %>
