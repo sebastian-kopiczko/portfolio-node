@@ -1,1 +1,27 @@
-<nav>navbar</nav>
+<nav class="navbar">
+    <div class="container navbar__container">
+        <a href="/" class="logo navbar__logo">
+            <img src="./assets/images/logo.svg" alt="">
+        </a>
+        <button id="menu-btn" class="navbar__button menu__trigger" tabindex="0">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+    </div>
+</nav>
+<div id="menu-overlay" class="menu-overlay">
+    <div class="container">
+        <nav class="nav">
+            <ul class="nav__menu menu">
+                <li class="menu__item"><a href="o-mnie" class="menu__link menu__trigger">o mnie</a></li>
+                <li class="menu__item"><a href="projekty" class="menu__link menu__trigger">projekty</a></li>
+                <li class="menu__item"><a href="kontakt" class="menu__link menu__trigger">kontakt</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="https://github.com/sebastian-kopiczko?tab=repositories" class="block button social-links__button">github</a> 
+                <a href="https://www.linkedin.com/in/sebastian-kopiczko/" class="block button social-links__button">linkedin</a>
+            </div>
+        </nav>
+    </div>
+</div>
