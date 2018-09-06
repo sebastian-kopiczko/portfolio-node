@@ -1,1 +1,17 @@
-about
+<%- include('includes/header') %>
+<%- include('includes/navbar') %>
+<section class="about">
+    <div class="container">
+        <div class="inner about__inner">
+            <div class="inner__head">
+                <h3 class="inner__subtitle uppercase"><?php echo $page_name; ?></h3>
+                <h2 class="inner__haedline">Trochę o mnie</h2>
+            </div>
+            <div class="inner__content">
+                <p>Mam na imię Sebastian i na co dzień jestem studentem na kierunku Aplikacje informatyczne w biznesie na UG. Chcę pracować i rozwjiać się jako front-end developer ponieważ daje mi to wiele frajdy i satysfakcji. Uwielbiam grać w siatkówkę, dobrą kuchnię oraz spędzanie czasu z najbliższymi :).</p>
+                <p>Z przyjmenością opowiem o sobie więcej - pozostaję do dyspozycji. Zachęcam do zapoznania się z moimi <a href="projekty" class="about__link">projektami</a> oraz kontem na <a href="https://github.com/sebastian-kopiczko?tab=repositories" class="about__link">Githubie</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('includes/footer') %>
