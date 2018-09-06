@@ -4,3 +4,10 @@ const port = 5000;
 app.listen(port, function(){
   console.log('server running');
 });
+
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+});
