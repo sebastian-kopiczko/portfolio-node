@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastian-kopiczko/portfolio-node.git"
+  },
+  "author": "SK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastian-kopiczko/portfolio-node/issues"
+  },
+  "homepage": "https://github.com/sebastian-kopiczko/portfolio-node#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
