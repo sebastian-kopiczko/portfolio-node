@@ -1,8 +1,9 @@
+const translation = require('./translations');
 module.exports = (function(){
   const projects = [
     {
       title: "Biała Perła",
-      desc: "Strona internetowa stworzona dla Białej Perły w Augustowie w oparciu o własny projekt graficzny.",
+      desc: `Strona internetowa stworzona dla Białej Perły w Augustowie w oparciu o własny projekt graficzny.`,
       tags: "html, scss, gulp, wordpress, illustrator",
       live: "http://biala-perla.pl/",
       github: "https://github.com/sebastian-kopiczko/biala-perla"

@@ -1,7 +1,8 @@
 const express = require('express');
-const i18n = require('i18n-2');
 const bodyParser = require('body-parser');
 const app = express();
+
+const i18n = require('i18n-2');
 const i18n_config = require('./js/translations')
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,15 +16,6 @@ let globalLang = 'pl';
 app.use((req, res, next) => {
   req.i18n.setLocale(globalLang);
   next();
-});
-
-app.post('/set', (req, res) => {
-  const lang = req.body.language;
-  if(lang !== globalLang){
-    globalLang = lang;
-    req.i18n.setLocale(lang);
-    res.json({ ok: true });
-  } else { return }
 });
 
 app.get('/', (req, res) => {
@@ -61,5 +53,14 @@ app.get('/projects', (req, res) => {
 
 app.get('/contact', (req, res) => res.render('contact'));
 app.get('*', (req, res) => res.render('404'));
+
+app.post('/set', (req, res) => {
+  const lang = req.body.language;
+  if(lang !== globalLang){
+    globalLang = lang;
+    req.i18n.setLocale(lang);
+    res.json({ ok: true });
+  } else { return }
+});
 
 app.listen(8090, "0.0.0.0");
