@@ -1,14 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const i18n = require('i18n-2');
+const i18n_config = require('./js/translations');
 
 const app = express();
-
-const i18n = require('i18n-2');
-const i18n_config = require('./js/translations')
-const { check, validationResult } = require('express-validator/check');
-
-
 app.use(bodyParser.urlencoded({
   extended: false
 }));
@@ -18,10 +14,24 @@ app.use(express.static(__dirname + '/public'));
 
 i18n.expressBind(app, i18n_config);
 
-let globalLang = 'pl';
+app.locals = { 
+  // default language
+  pageLang: 'pl',
+ };
 app.use((req, res, next) => {
-  req.i18n.setLocale(globalLang);
+  req.i18n.setLocale(app.locals.pageLang);
   next();
+});
+
+app.post('/language', (req, res) => {
+  const lang = req.body.language;
+  if (lang !== app.locals.pageLang) {
+    app.locals.pageLang = lang;
+    req.i18n.setLocale(app.locals.pageLang);
+    res.json({
+      ok: true
+    });
+  } else { return }
 });
 
 app.get('/', (req, res) => {
@@ -31,6 +41,7 @@ app.get('/', (req, res) => {
     navContact: req.i18n.__("nav-contact"),
   });
 });
+
 app.get('/about', (req, res) => {
   res.render('about', {
     navAbout: req.i18n.__("nav-about"),
@@ -44,7 +55,6 @@ app.get('/about', (req, res) => {
 
 app.get('/projects', (req, res) => {
   const projects = require('./js/projects');
-
   res.render('projects', {
     projectsItems: projects,
     projectsDesc: req.i18n.__("project-description"),
@@ -67,39 +77,35 @@ app.get('/contact', (req, res) => {
     navAbout: req.i18n.__("nav-about"),
     navProjects: req.i18n.__("nav-projects"),
     navContact: req.i18n.__("nav-contact")
-  })
+  });
 });
 app.get('*', (req, res) => res.render('404'));
 
-app.post('/set', (req, res) => {
-  const lang = req.body.language;
-  if (lang !== globalLang) {
-    globalLang = lang;
-    req.i18n.setLocale(lang);
-    res.json({
-      ok: true
-    });
-  } else { return }
-});
-
-app.post('/send', [
-  check('email').isEmail(),
-], (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.redirect('back');
-  }
+app.post('/send', (req, res) => {
   const output = `
     <h1>Nowa wiadomość od: ${req.body.name}</h1>
     <h3>${req.body.email}</h3>
     <h5>Treść: </h5>
     <p>${req.body.message}</p>
   `
-  // let transporter = nodemailer.createTransport
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      type: 'OAuth2',
+      user: '#',
+      clientId: '#',
+      clientSecret: '#',
+      refreshToken: '#',
+      accessToken: '#',
+      expires: 1484314697598
+    }
+  });
 
   let mailOptions = {
-    from: '"Portfolio Contact Page" <bastun2007@gmail.com>',
-    to: 'sebastian.kopiczko@gmail.com',
+    from: '"Portfolio Contact Page" <#>',
+    to: '#',
     subject: 'Wiadomość z https://sebastiankopiczko.pl',
     text: '',
     html: output
@@ -111,6 +117,7 @@ app.post('/send', [
     }
     console.log('Message sent: %s', info.messageId);
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    res.send('Email sent');
   });
 })
 
