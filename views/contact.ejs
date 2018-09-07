@@ -8,29 +8,26 @@
               <h2 class="inner__haedline"><%= contactHeading %></h2>
           </div>
           <div class="inner__content">  
-              <div class="contact__alert">alert div</div> 
-              <%= //msg %>
               <form method="post" action="send" class="form contact__form" autocomplete="off">
                   <div class="form__row">
                       <div class="form__group">
-                          <input type="text" name="name" id="name" class="form__input" value="">
+                          <input type="text" name="name" id="name" class="form__input" required pattern="[A-Za-z]{1,32}">
                           <label for="name" class="form__label"><%= contactLabelName %></label>
                       </div>
                       <div class="form__group">
-                          <input type="text" name="email" id="email" class="form__input" value="">
+                          <input type="text" name="email" id="email" class="form__input" required>
                           <label for="email" class="form__label">E-mail</label>
                       </div>
                   </div>
                   <div class="form__row">
-                      <input type="textarea" name="message" id="message" class="form__input" value="">
+                      <input type="textarea" name="message" id="message" class="form__input" required minlength="8" maxlength="256">
                       <label for="message" class="form__label"><%= contactLabelMessage %></label>
                   </div>
-                  <!-- <div class="g-recaptcha" data-sitekey="6LflyGAUAAAAANOOpwxx53NAk6Aum3u3G5vqoyTp"></div> -->
                   <button type="submit" class="button button-gradient button-gradient--purple form__button"><span><%= contactSend %></span></button>
               </form>
           </div>
       </div>
   </div>
 </section>
-<script src="js/mailValidate.js"></script>
+<script src="js/contact.js"></script>
 <%- include('includes/footer') %>
