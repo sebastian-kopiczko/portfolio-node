@@ -1,5 +1,5 @@
 <%- include('includes/header') %>
-<%- include('includes/navbar') %
+<%- include('includes/navbar') %>
 <section class="contact">
   <div class="container">
       <div class="inner contact__inner">
@@ -9,26 +9,27 @@
           </div>
           <div class="inner__content">  
               <div class="contact__alert">alert div</div> 
-              <form method="post" action="" class="form contact__form" autocomplete="off">
+              <%= //msg %>
+              <form method="post" action="send" class="form contact__form" autocomplete="off">
                   <div class="form__row">
                       <div class="form__group">
-                          <input type="text" name="name" id="name" class="form__input" value="<?php echo isset($_POST['name']) ? $name: ''; ?>">
-                          <label for="name" class="form__label"><% contactLabelName %></label>
+                          <input type="text" name="name" id="name" class="form__input" value="">
+                          <label for="name" class="form__label"><%= contactLabelName %></label>
                       </div>
                       <div class="form__group">
-                          <input type="text" name="email" id="email" class="form__input" value="<?php echo isset($_POST['email']) ? $email: ''; ?>">
+                          <input type="text" name="email" id="email" class="form__input" value="">
                           <label for="email" class="form__label">E-mail</label>
                       </div>
                   </div>
                   <div class="form__row">
-                      <input type="textarea" name="message" id="message" class="form__input" value="<?php echo isset($_POST['message']) ? $message: ''; ?>">
-                      <label for="message" class="form__label"><% contactLabelName %></label>
+                      <input type="textarea" name="message" id="message" class="form__input" value="">
+                      <label for="message" class="form__label"><%= contactLabelMessage %></label>
                   </div>
-                  <!-- <div class="g-recaptcha" data-sitekey="6LflyGAUAAAAANOOpwxx53NAk6Aum3u3G5vqoyTp"></div>
-                  <button type="submit" name="submit" class="button button-gradient button-gradient--purple form__button"><span><% // contactSend %></span></button> -->
+                  <!-- <div class="g-recaptcha" data-sitekey="6LflyGAUAAAAANOOpwxx53NAk6Aum3u3G5vqoyTp"></div> -->
+                  <button type="submit" class="button button-gradient button-gradient--purple form__button"><span><%= contactSend %></span></button>
               </form>
           </div>
       </div>
   </div>
 </section>
-<%- include('includes/footer') %
+<%- include('includes/footer') %>
