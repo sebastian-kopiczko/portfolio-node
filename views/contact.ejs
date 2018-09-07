@@ -1,1 +1,34 @@
-contact
+<%- include('includes/header') %>
+<%- include('includes/navbar') %
+<section class="contact">
+  <div class="container">
+      <div class="inner contact__inner">
+          <div class="inner__head">
+          <h3 class="inner__subtitle uppercase"><%= contactBreadcrumb %></h3>
+              <h2 class="inner__haedline"><%= contactHeading %></h2>
+          </div>
+          <div class="inner__content">  
+              <div class="contact__alert">alert div</div> 
+              <form method="post" action="" class="form contact__form" autocomplete="off">
+                  <div class="form__row">
+                      <div class="form__group">
+                          <input type="text" name="name" id="name" class="form__input" value="<?php echo isset($_POST['name']) ? $name: ''; ?>">
+                          <label for="name" class="form__label"><% contactLabelName %></label>
+                      </div>
+                      <div class="form__group">
+                          <input type="text" name="email" id="email" class="form__input" value="<?php echo isset($_POST['email']) ? $email: ''; ?>">
+                          <label for="email" class="form__label">E-mail</label>
+                      </div>
+                  </div>
+                  <div class="form__row">
+                      <input type="textarea" name="message" id="message" class="form__input" value="<?php echo isset($_POST['message']) ? $message: ''; ?>">
+                      <label for="message" class="form__label"><% contactLabelName %></label>
+                  </div>
+                  <!-- <div class="g-recaptcha" data-sitekey="6LflyGAUAAAAANOOpwxx53NAk6Aum3u3G5vqoyTp"></div>
+                  <button type="submit" name="submit" class="button button-gradient button-gradient--purple form__button"><span><% // contactSend %></span></button> -->
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+<%- include('includes/footer') %

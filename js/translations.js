@@ -28,7 +28,8 @@ module.exports = (function () {
         "contact-breadcrumb": "contact",
         "contact-heading": "Contact form",
         "contact-label-name": "Name",
-        "contact-label-message": "Message"
+        "contact-label-message": "Message",
+        "contact-send": "Send"
       },
       "pl": {
         "nav-about": "o mnie",
@@ -55,7 +56,8 @@ module.exports = (function () {
         "contact-breadcrumb": "kontakt",
         "contact-heading": "Formularz kontaktowy",
         "contact-label-name": "Imię",
-        "contact-label-message": "Wiadomość"
+        "contact-label-message": "Wiadomość",
+        "contact-send": "Wyślij"
       }
     },
     cookieName: 'locale'
