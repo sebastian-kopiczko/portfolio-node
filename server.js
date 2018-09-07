@@ -32,8 +32,7 @@ app.get('/about', (req, res) => {
     navContact: req.i18n.__("nav-contact"),
     aboutContent: req.i18n.__("about-content"),
     aboutHeading: req.i18n.__("about-heading"),
-    aboutBreadcrumb: req.i18n.__("about-breadcrumb"),
-
+    aboutBreadcrumb: req.i18n.__("about-breadcrumb")
   });
 });
 
@@ -42,12 +41,13 @@ app.get('/projects', (req, res) => {
 
   res.render('projects', {
     projectsItems: projects,
-    navAbout: req.i18n.__("nav-about"),
-    navProjects: req.i18n.__("nav-projects"),
-    navContact: req.i18n.__("nav-contact"),
+    projectsDesc: req.i18n.__("project-description"),
     projectsHeading: req.i18n.__("projects-heading"),
     projectsBreadcrumb: req.i18n.__("projects-breadcrumb"),
-    projectsContent: req.i18n.__("projects-content")
+    projectsContent: req.i18n.__("projects-content"),
+    navAbout: req.i18n.__("nav-about"),
+    navProjects: req.i18n.__("nav-projects"),
+    navContact: req.i18n.__("nav-contact")
   });
 });
 

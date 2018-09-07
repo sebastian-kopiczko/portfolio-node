@@ -13,37 +13,22 @@ module.exports = (function () {
         "projects-breadcrumb": "portfolio",
         "projects-heading": "My projects",
         "projects-content": "Technologies that I used and linkages to github repository and live demo.",
-        "bialaperla": {
-          "desc": "Website build for Biala Perla (restaurant and marina based on the water) from Augustow - own design."
+        "project-description": {
+          "bialaperla": "Website build for Biala Perla (restaurant and marina based on the water) from Augustow - own design.",
+          "resume": "Web personal resume.",
+          "profil": "Wordpress website done for carpentry from Suwalki based on own graphical project.",
+          "weather-app": "Application to check current weather (fetching data from Dark Sky API) for specific location (Google API autocomplete).",
+          "notes-app": "Simple app that allows to add, edit and delete notes.",
+          "poland-psd": "PSD to HTML project.",
+          "youtube-app": "IN PROGRESS - application to fetching data about channels and searching videos. ",
+          "tips-calculator": "IN PROGRESS - Simple tip calculator made for university classes.",
+          "restaurant-psd": "PSD to HTML project.",
+          "shopping-list": "Small app to create shopping list."
         },
-        "resume": {
-          "desc": "Web personal resume."
-        },
-        "profil": {
-          "desc": "Wordpress website done for carpentry from Suwalki based on own graphical project."
-        },
-        "wather-app": {
-          "desc": "Application to check current weather (fetching data from Dark Sky API) for specific location (Google API autocomplete)"
-        },
-        "notes-app": {
-          "desc": "Simple app that allows to add, edit and delete notes."
-        },
-        "poland-psd": {
-          "desc": "PSD to HTML project."
-        },
-        "youtube-app": {
-          "desc": "IN PROGRESS - application to fetching data about channels and searching videos."
-        },
-        "tips-calculator": {
-          "desc": "IN PROGRESS - Simple tip calculator made for university classes."
-        },
-        "restaurant-psd": {
-          "desc": "PSD to HTML project."
-        },
-        "shopping-list": {
-          "desc": " Small app to create shopping list"
-        },
-        "test": "test english"
+        "contact-breadcrumb": "contact",
+        "contact-heading": "Contact form",
+        "contact-label-name": "Name",
+        "contact-label-message": "Message"
       },
       "pl": {
         "nav-about": "o mnie",
@@ -55,37 +40,22 @@ module.exports = (function () {
         "projects-breadcrumb": "portfolio",
         "projects-heading": "Moje projekty",
         "projects-content": "Użyte technologie, linki do githuba/podglądu na żywo.",
-        "bialaperla": {
-          "desc": "Strona internetowa stworzona dla Białej Perły w Augustowie w oparciu o własny projekt graficzny."
+        "project-description": {
+          "bialaperla": "Strona internetowa stworzona dla Białej Perły w Augustowie w oparciu o własny projekt graficzny.",
+          "resume": "Moje CV, które wykonałem korzystając z technologii webowych.",
+          "profil": "Strona interntowa wykonana dla zakładu stolarskiego w Suwałkach oparta na Wordpressie - własny projekt graficzny.",
+          "weather-app": "Aplikacja sprawdzająca aktualną pogodę (Dark Sky API) dla podanej lokalizacji (Google API).",
+          "notes-app": "Prosta aplikacja pozwalająca na dodawanie, edycję oraz usuwanie notatek.",
+          "poland-psd": "Strona internetowa zakodowana na podstawie darmowego szablonu PSD.",
+          "youtube-app": "W BUDOWIE - Aplikacja pozwalająca na pobieranie danych o kanałach oraz wyszukiwanie filmów z serwisu YT. ",
+          "tips-calculator": "W BUDOWIE - Prosty kalkulator obliczający wysokość napiwku. Projekt wykonany na zaliczenie przedmiotu na uczelni.",
+          "restaurant-psd": "Strona internetowa zakodowana na podstawie darmowego szablonu PSD.",
+          "shopping-list": "Niewielka aplikacja służąca do robienia listy zakupów."
         },
-        "resume": {
-          "desc": "Moje CV, które wykonałem korzystając z technologii webowych."
-        },
-        "profil": {
-          "desc": "Strona interntowa wykonana dla zakładu stolarskiego w Suwałkach oparta na Wordpressie - własny projekt graficzny."
-        },
-        "wather-app": {
-          "desc": "Aplikacja sprawdzająca aktualną pogodę (Dark Sky API) dla podanej lokalizacji (Google API)."
-        },
-        "notes-app": {
-          "desc": "Prosta aplikacja pozwalająca na dodawanie, edycję oraz usuwanie notatek."
-        },
-        "poland-psd": {
-          "desc": "Strona internetowa zakodowana na podstawie darmowego szablonu PSD."
-        },
-        "youtube-app": {
-          "desc": "W BUDOWIE - Aplikacja pozwalająca na pobieranie danych o kanałach oraz wyszukiwanie filmów z serwisu YT. "
-        },
-        "tips-calculator": {
-          "desc": "W BUDOWIE - Prosty kalkulator obliczający wysokość napiwku. Projekt wykonany na zaliczenie przedmiotu na uczelni."
-        },
-        "restaurant-psd": {
-          "desc": "Strona internetowa zakodowana na podstawie darmowego szablonu PSD."
-        },
-        "shopping-list": {
-          "desc": " Niewielka aplikacja służąca do robienia listy zakupów."
-        },
-        "test": "polski"
+        "contact-breadcrumb": "kontakt",
+        "contact-heading": "Formularz kontaktowy",
+        "contact-label-name": "Imię",
+        "contact-label-message": "Wiadomość"
       }
     },
     cookieName: 'locale'
