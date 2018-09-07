@@ -28,12 +28,6 @@ i18n.expressBind(app, {
       "projects-breadcrumb": "projekty",
       "projects-heading": "Moje prace",
       "projects-content": "Użyte technologie, linki do githuba/podglądu na żywo.",
-      "bialaperla": {
-        "title": "biała perła"
-      },
-      "profil": {
-        "title": "profil suwałki"
-      },
       "test": "polski"
     }
   },
@@ -73,23 +67,9 @@ app.get('/about', (req, res) => {
 
   });
 });
+
 app.get('/projects', (req, res) => {
-  const projects = [
-    {
-      title: req.i18n.__('bialaperla.title'),
-      desc: "Strona internetowa stworzona dla Białej Perły w Augustowie w oparciu o własny projekt graficzny.",
-      tags: "html, scss, gulp, wordpress, illustrator",
-      live: "http://biala-perla.pl/",
-      github: "https://github.com/sebastian-kopiczko/biala-perla"
-    },
-    {
-      title: req.i18n.__('profil.title'),
-      desc: "Strona interntowa wykonana dla zakładu stolarskiego w Suwałkach oparta na  Wordpressie - własny projekt graficzny.",
-      tags: "html, scss, gulp, wordpress, ACF, illustrator",
-      live: "https://meble-profil.pl/",
-      github: "https://github.com/sebastian-kopiczko/ProfilSuwalki"
-    }
-  ];
+  const projects = require('./js/projects');
 
   res.render('projects', {
     projectsItems: projects,
@@ -106,9 +86,3 @@ app.get('/contact', (req, res) => res.render('contact'));
 app.get('*', (req, res) => res.render('404'));
 
 app.listen(8090, "0.0.0.0");
-
-/* <ul>
-  <% projects.forEach(project () =>{ %>
-    <li><%= project.title %></li>
-  <% } %>
-</ul> */
