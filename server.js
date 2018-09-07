@@ -6,6 +6,8 @@ const app = express();
 
 const i18n = require('i18n-2');
 const i18n_config = require('./js/translations')
+const { check, validationResult } = require('express-validator/check');
+
 
 app.use(bodyParser.urlencoded({
   extended: false
@@ -77,33 +79,23 @@ app.post('/set', (req, res) => {
     res.json({
       ok: true
     });
-  } else {
-    return
-  }
+  } else { return }
 });
 
-app.post('/send', (req, res) => {
+app.post('/send', [
+  check('email').isEmail(),
+], (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.redirect('back');
+  }
   const output = `
     <h1>Nowa wiadomość od: ${req.body.name}</h1>
     <h3>${req.body.email}</h3>
     <h5>Treść: </h5>
     <p>${req.body.message}</p>
   `
-
-  let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      type: 'OAuth2',
-      user: '',
-      clientId: '',
-      clientSecret: '',
-      refreshToken: '',
-      accessToken: '',
-      expires: 1484314697598
-    }
-  });
+  // let transporter = nodemailer.createTransport
 
   let mailOptions = {
     from: '"Portfolio Contact Page" <bastun2007@gmail.com>',
