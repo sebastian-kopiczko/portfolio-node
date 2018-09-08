@@ -262,6 +262,10 @@ section {
   text-transform: capitalize;
 }
 
+.navbar__language button{
+  color: var(--dark-blue);
+}
+
 .social-links {
   position: absolute;
   top: 0;
@@ -472,9 +476,6 @@ section {
   html {
     font-size: 18px;
   }
-  .container {
-    width: 75%;
-  }
   .menu-overlay .menu__item {
     font-size: 2rem;
   }
@@ -483,6 +484,9 @@ section {
 @media (min-width: 1024px) {
   html {
     font-size: 18px;
+  }
+  .container {
+    width: 75%;
   }
   p {
     max-width: 35em;
