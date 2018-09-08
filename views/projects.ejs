@@ -30,9 +30,9 @@
               <div class="card__tags">
                 <%= project.tags %>
               </div>
-              <a href="#" class="button button-gradient button-gradient--black"><span>github</span></a>
+              <a href="<%= project.github %>" class="button button-gradient button-gradient--black"><span>github</span></a>
               <% if (project.live){ %>
-              <a href="#" class="button button-gradient button-gradient--blue"><span>live</span></a>
+              <a href="<%= project.live %>" class="button button-gradient button-gradient--blue"><span>live</span></a>
               <% } %>
             </div>
           </div>
