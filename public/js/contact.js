@@ -58,6 +58,34 @@ const checkIfInvalid = () => {
     return false;
 };
 
+const showAlert = (type, content) => {
+    const alertDiv = document.createElement('div');
+    const text = document.createTextNode(content);
+    const form = document.querySelector('.form')
+    alertDiv.appendChild(text);
+    alertDiv.classList.add('form__alert', type);
+    form.insertAdjacentElement('beforebegin', alertDiv);
+    setTimeout(() => {
+        alertDiv.remove();
+    }, 2500);
+}
+
+const alertMessages = () => {
+    let danger =  '';
+    let success = '';
+    if(document.documentElement.lang === "en") {
+        danger = "Unable to send email, please check form inputs";
+        success = "Email send successfully"
+    } else {
+        danger = "Nie udało się wysłać wiadomości, sprawdź pola w formularzu";
+        success = "Wiadomość wysłana pomyślnie"
+    }
+    return {
+        danger,
+        success
+    }
+}
+
 nameInput.addEventListener('input', () => {
     const regex = /^[a-z ,.'-]+$/i;
     toggleValidationClass(nameInput, regex);
@@ -89,10 +117,13 @@ inputs.forEach((input) => {
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     if(checkIfEmpty() || checkIfInvalid()){
-        console.log('form invalid');
+        showAlert('alert--danger', alertMessages().danger);
         return false;
     }else{
-        console.log('form valid, msg sent');
+        showAlert('alert--success', alertMessages().success)
         sendMail();
+        setTimeout(() => {
+            window.location.reload();
+        }, 2500);
     }    
 });
