@@ -34,6 +34,7 @@ p {
 button {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .app {
@@ -880,5 +881,8 @@ section {
 @media (min-width: 1024px) {
   .form__group {
     width: 40%;
+  }
+  .form__group--full-width{
+    width: 100%;
   }
 }
