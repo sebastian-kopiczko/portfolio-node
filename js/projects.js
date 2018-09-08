@@ -2,14 +2,6 @@ const translation = require('./translations');
 module.exports = (function(){
   const projects = [
     {
-      name: 'bialaperla',
-      title: "Biała Perła",
-      desc: `Strona internetowa stworzona dla Białej Perły w Augustowie w oparciu o własny projekt graficzny.`,
-      tags: "html, scss, gulp, wordpress, illustrator",
-      live: "http://biala-perla.pl/",
-      github: "https://github.com/sebastian-kopiczko/biala-perla"
-    },
-    {
       name: 'resume',
       title: 'CV',
       desc: 'Webowe CV',
@@ -24,6 +16,14 @@ module.exports = (function(){
       tags: "html, scss, gulp, wordpress, ACF, illustrator",
       live: "https://meble-profil.pl/",
       github: "https://github.com/sebastian-kopiczko/ProfilSuwalki"
+    },
+    {
+      name: 'bialaperla',
+      title: "Biała Perła",
+      desc: `Strona internetowa stworzona dla Białej Perły w Augustowie w oparciu o własny projekt graficzny.`,
+      tags: "html, scss, gulp, wordpress, illustrator",
+      live: "http://biala-perla.pl/",
+      github: "https://github.com/sebastian-kopiczko/biala-perla"
     },
     {
       name: 'weather-app',
