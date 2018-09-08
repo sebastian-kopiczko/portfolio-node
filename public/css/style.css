@@ -798,13 +798,13 @@ section {
   color: var(--success);
 }
 
-input:invalid{
-  border-color: var(--danger) !important;
+.input--invalid{
+  border-bottom-color: var(--danger) !important;
   color: var(--danger);
-  font-weight: bolder;
 }
-input:valid{
-  border-color: var(--success);
+
+.input--valid{
+  border-bottom-color: var(--success) !important;;
 }
 
 .form {
