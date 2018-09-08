@@ -16,28 +16,32 @@
       </div>
       <div class="inner__content">
         <% projectsItems.forEach(function(project){ %>
-          <div class="card">
-            <!-- <div class="card__image">
-                  <img src="assets/images/portfolio/<?php echo $project_value['name']; ?>/default.png">
-              </div> -->
-            <div class="card__content">
-              <h2 class="card__title uppercase">
-                <%= project.title %>
-              </h2>
-              <p class="card__desc">
-                <%- projectsDesc[project.name] %>
-              </p>
-              <div class="card__tags">
-                <%= project.tags %>
-              </div>
+        <div class="card">
+          <% if(project.name) { %>
+          <div class="card__image">
+            <img src="assets/projects/<%= project.name %>.png">
+          </div>
+          <% } %>
+          <h2 class="card__title uppercase">
+            <%= project.title %>
+          </h2>
+          <p class="card__desc">
+            <%- projectsDesc[project.name] %>
+          </p>
+          <div class="card__footer">
+            <div class="card__tags">
+              <%= project.tags %>
+            </div>
+            <div class="card__buttons">
               <a href="<%= project.github %>" class="button button-gradient button-gradient--black"><span>github</span></a>
               <% if (project.live){ %>
               <a href="<%= project.live %>" class="button button-gradient button-gradient--blue"><span>live</span></a>
               <% } %>
             </div>
           </div>
-          <% }) %>
         </div>
+        <% }) %>
+      </div>
     </div>
   </div>
 </section>
