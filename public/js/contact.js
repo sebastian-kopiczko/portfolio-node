@@ -4,6 +4,7 @@ const messageInput = document.getElementById('message');
 const emailForm = document.querySelector('.contact__form');
 const submitButton = document.querySelector('.form__button');
 const inputs = Array.from(document.querySelectorAll('.form__input'));
+const labels = Array.from(document.querySelectorAll('.form__label'));
 
 const sendMail = () => {
     const name = nameInput.value;
@@ -18,18 +19,20 @@ const sendMail = () => {
         body: JSON.stringify({name: name, email: email, message: message})
     })
     .then((res) => {
-        console.log(res);
+        showAlert('alert--success', alertMessages().success)        
+        clearInputs();
     })
     .catch((err) => {
-        console.log(err);
+        showAlert('alert--danger', err);
     })
-    clearInputs();
 };
 
 const clearInputs = () =>{
     inputs.forEach(input => {
         input.value = '';
+        input.classList.remove('input--valid');
     });
+    labels.forEach(label => label.classList.remove('form__label--active'))
 };
 
 const toggleValidationClass = (element, regex) => {
@@ -74,25 +77,22 @@ const alertMessages = () => {
     let danger =  '';
     let success = '';
     if(document.documentElement.lang === "en") {
-        danger = "Unable to send email, please check form inputs";
-        success = "Email send successfully"
+        danger = "Unable to send email, please check form inputs.";
+        success = "Email send successfully."
     } else {
-        danger = "Nie udało się wysłać wiadomości, sprawdź pola w formularzu";
-        success = "Wiadomość wysłana pomyślnie"
+        danger = "Nie udało się wysłać wiadomości, sprawdź pola w formularzu.";
+        success = "Wiadomość wysłana pomyślnie."
     }
-    return {
-        danger,
-        success
-    }
+    return { danger, success }
 }
 
 nameInput.addEventListener('input', () => {
-    const regex = /^[a-z ,.'-]+$/i;
+    const regex = /.*\S.*/;
     toggleValidationClass(nameInput, regex);
 });
 
 emailInput.addEventListener('input', () => {
-    const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    const regex = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
     toggleValidationClass(emailInput, regex);
 });
 
@@ -119,11 +119,7 @@ submitButton.addEventListener('click', (e) => {
     if(checkIfEmpty() || checkIfInvalid()){
         showAlert('alert--danger', alertMessages().danger);
         return false;
-    }else{
-        showAlert('alert--success', alertMessages().success)
+    } else{
         sendMail();
-        setTimeout(() => {
-            window.location.reload();
-        }, 2500);
     }    
 });
