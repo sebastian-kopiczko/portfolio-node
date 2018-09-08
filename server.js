@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const i18n = require('i18n-2');
 const i18n_config = require('./js/translations');
+const autoprefixer = require('express-autoprefixer');
 
 const app = express();
 app.use(bodyParser.urlencoded({
@@ -10,12 +11,12 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
+app.use(autoprefixer({ browsers: 'last 2 versions', cascade: false }))
 app.use(express.static(__dirname + '/public'));
 
 i18n.expressBind(app, i18n_config);
 
 app.locals = { 
-  // default language
   pageLang: 'pl',
  };
 app.use((req, res, next) => {
@@ -88,6 +89,7 @@ app.post('/send', (req, res) => {
     <h5>Treść: </h5>
     <p>${req.body.message}</p>
   `
+
   let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -117,8 +119,9 @@ app.post('/send', (req, res) => {
     }
     console.log('Message sent: %s', info.messageId);
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    res.send('Email sent');
   });
 })
 
-app.listen(8090, "0.0.0.0");
+app.listen(8090, "0.0.0.0", () => {
+  console.log('App running on port: 8090')
+});
