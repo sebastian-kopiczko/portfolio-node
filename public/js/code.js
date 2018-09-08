@@ -37,3 +37,8 @@ UISelectors.changeLang.addEventListener('click', (e) => {
         setLanguage(e.target.dataset.lang);
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const currentLang = document.documentElement.lang;
+    document.querySelector(`.navbar__language .${currentLang}`).style.display = 'none';
+})
