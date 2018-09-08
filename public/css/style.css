@@ -872,6 +872,9 @@ section {
   .form__group {
     width: 48%;
   }
+  .form__group--full-width{
+    width: 100%;
+  }
 }
 
 @media (min-width: 1024px) {

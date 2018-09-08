@@ -1,33 +1,42 @@
 <%- include('includes/header') %>
 <%- include('includes/navbar') %>
 <section class="contact">
-  <div class="container">
-      <div class="inner contact__inner">
-          <div class="inner__head">
-          <h3 class="inner__subtitle uppercase"><%= contactBreadcrumb %></h3>
-              <h2 class="inner__haedline"><%= contactHeading %></h2>
-          </div>
-          <div class="inner__content">  
-              <form action="" class="form contact__form" autocomplete="off" novalidate>
-                  <div class="form__row">
-                      <div class="form__group">
-                          <input type="text" name="name" id="name" class="form__input">
-                          <label for="name" class="form__label"><%= contactLabelName %></label>
-                      </div>
-                      <div class="form__group">
-                          <input type="text" name="email" id="email" class="form__input">
-                          <label for="email" class="form__label">E-mail</label>
-                      </div>
-                  </div>
-                  <div class="form__row">
-                      <input type="textarea" name="message" id="message" class="form__input">
-                      <label for="message" class="form__label"><%= contactLabelMessage %></label>
-                  </div>
-                  <button type="submit" class="button button-gradient button-gradient--purple form__button"><span><%= contactSend %></span></button>
-              </form>
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="inner contact__inner">
+            <div class="inner__head">
+                <h3 class="inner__subtitle uppercase">
+                    <%= contactBreadcrumb %>
+                </h3>
+                <h2 class="inner__haedline">
+                    <%= contactHeading %>
+                </h2>
+            </div>
+            <div class="inner__content">
+                <form action="" class="form contact__form" autocomplete="off" novalidate>
+                    <div class="form__row">
+                        <div class="form__group">
+                            <input type="text" name="name" id="name" class="form__input">
+                            <label for="name" class="form__label">
+                                <%= contactLabelName %></label>
+                        </div>
+                        <div class="form__group">
+                            <input type="text" name="email" id="email" class="form__input">
+                            <label for="email" class="form__label">E-mail</label>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="form__group form__group--full-width">
+                            <input type="textarea" name="message" id="message" class="form__input">
+                            <label for="message" class="form__label">
+                                <%= contactLabelMessage %></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="button button-gradient button-gradient--purple form__button"><span>
+                            <%= contactSend %></span></button>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 <script src="js/contact.js"></script>
 <%- include('includes/footer') %>
