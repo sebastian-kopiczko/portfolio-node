@@ -798,9 +798,13 @@ section {
   color: var(--success);
 }
 
-.input--danger{
-  border-bottom-color: var(--danger) !important;
+input:invalid{
+  border-color: var(--danger) !important;
   color: var(--danger);
+  font-weight: bolder;
+}
+input:valid{
+  border-color: var(--success);
 }
 
 .form {
