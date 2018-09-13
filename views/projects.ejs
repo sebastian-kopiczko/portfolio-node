@@ -17,11 +17,13 @@
       <div class="inner__content">
         <% projectsItems.forEach(function(project){ %>
         <div class="card">
-          <% if(project.name) { %>
           <div class="card__image">
+            <% if(!project.inProgress) { %>
             <img src="assets/projects/<%= project.name %>.png">
+            <% } else { %> 
+            <img src="assets/projects/work.png">
+            <% } %>
           </div>
-          <% } %>
           <h2 class="card__title uppercase">
             <%= project.title %>
           </h2>
