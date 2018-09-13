@@ -146,9 +146,6 @@ section {
   -ms-flex-align: center;
   align-items: center;
 }
-.navbar__button:hover {
-  cursor: pointer;
-}
 .navbar__logo {
   display: inline-block;
   height: 1.5em;
@@ -157,6 +154,12 @@ section {
 .navbar__button{
   height: 22px;
   display: inline-block;
+}
+.navbar__button span{
+  pointer-events: none;
+}
+.navbar__button:hover {
+  cursor: pointer;
 }
 .hamburger-text{
   display: inline-block;
@@ -699,12 +702,14 @@ section {
   position: relative;
 }
 .card__image {
-  position: relative;
-  max-height: 10em;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (min-width: 550px) {
   .card__image {
-    max-height: 12em;
+    height: 12em;
   } 
 }
 .card__image img {
