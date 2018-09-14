@@ -645,11 +645,6 @@ section {
     align-items: stretch;
   }
 }
-@media (min-width: 1200px) {
-  .portfolio .inner__content {
-    justify-content: space-evenly;
-  }
-}
 
 .card {
   margin: 1em 0;
